@@ -207,6 +207,9 @@ See the git log for details at http://github.com/libffi/libffi.
     3.3 Apr-12-19
         Add Windows ARM32/ARM64 (WOA) support.
     
+    3.3 Mar-05-19
+        Add Windows 32-bit arm support.
+        
     3.2.1 Nov-12-14
         Build fix for non-iOS AArch64 targets.
     
