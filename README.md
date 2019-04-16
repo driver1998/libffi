@@ -57,6 +57,7 @@ tested:
 | ARC             | Linux            | GCC                     |
 | ARM             | Linux            | GCC                     |
 | ARM             | iOS              | GCC                     |
+| ARM             | Windows          | MSVC                    |
 | AVR32           | Linux            | GCC                     |
 | Blackfin        | uClinux          | GCC                     |
 | HPPA            | HPUX             | GCC                     |
@@ -203,9 +204,9 @@ See the git log for details at http://github.com/libffi/libffi.
           GNU compiler uses 80 bits (128 in memory) FFI_GNUW64 ABI.
 	Many new tests cases and bug fixes.
 
-    3.3 APR-12-19
-        Add windows on arm64 (WOA) support.
-      
+    3.3 Apr-12-19
+        Add Windows ARM32/ARM64 (WOA) support.
+    
     3.2.1 Nov-12-14
         Build fix for non-iOS AArch64 targets.
     
