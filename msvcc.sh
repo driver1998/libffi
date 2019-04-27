@@ -85,6 +85,11 @@ do
       safeseh=
       shift 1
     ;;
+    -maarch64)
+      ml='armasm64'
+      safeseh=''
+      shift 1
+    ;;
     -clang-cl)
       cl="clang-cl"
       shift 1
@@ -295,6 +300,9 @@ if [ -n "$assembly" ]; then
     fi
     ppsrc="$outdir/$(basename $src|sed 's/.S$/.asm/g')"
 
+    if [ $ml = "armasm64" ]; then
+      defines="$defines -D_M_ARM64"
+    fi
     if [ $ml = "armasm" ]; then
       defines="$defines -D_M_ARM"
     fi
@@ -307,6 +315,8 @@ if [ -n "$assembly" ]; then
     output="$(echo $output | sed 's%/F[dpa][^ ]*%%g')"
     if [ $ml = "armasm" ]; then
       args="-nologo -g -oldit $armasm_output $ppsrc -errorReport:prompt"
+    elif [ $ml = "armasm64" ]; then
+      args="-nologo -g $armasm_output $ppsrc -errorReport:prompt"
     else
       args="-nologo $safeseh $single $output $ppsrc"
     fi
